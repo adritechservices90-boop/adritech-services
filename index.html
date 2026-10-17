@@ -9,31 +9,26 @@
 <title>AdriTech Services — Le numérique, simplement.</title>
 <style>
 :root {
-  --navy:#10243b;
-  --navy2:#173b60;
-  --blue:#0789f9;
-  --cyan:#51caf5;
-  --bg:#f0f5fb;
-  --text:#14263c;
-  --muted:#53657a;
-  --white:#fff;
-  --border:#e1eaf4;
+  --navy:#10243b; --navy2:#173b60; --blue:#0789f9;
+  --cyan:#51caf5; --bg:#f0f5fb; --text:#14263c;
+  --muted:#53657a; --white:#fff; --border:#e1eaf4;
   --shadow:0 5px 22px #173b6010;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
 a{color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
 a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
 .container{width:min(1440px,94%);margin:auto}
 header{background:var(--navy);color:white;position:sticky;top:0;z-index:10;box-shadow:0 3px 15px #10243b22}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:78px;padding:10px 0}
-.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
-.brand-svg{width:90px;height:60px;flex-shrink:0}
-.brand-copy{font-size:25px;font-weight:800;line-height:1.15}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;min-width:0}
+.brand-svg{width:125px;height:65px;flex-shrink:0}
+.brand-copy{font-size:29px;font-weight:800;line-height:1.15;white-space:nowrap}
 .brand-copy span{color:var(--cyan)}
-.tagline{font-size:12px;color:#d9e6f3;font-weight:400;margin-top:4px}
-nav{display:flex;gap:15px;align-items:center;flex-wrap:wrap}
+.tagline{font-size:13px;color:#d9e6f3;font-weight:400;margin-top:4px}
+nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
 nav a{text-decoration:none;font-size:13px;color:#f2f7fc}
 nav a:hover{color:var(--cyan)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 19px;background:var(--blue);border:1px solid var(--blue);border-radius:8px;color:white;text-decoration:none;font-weight:700;font-size:14px;cursor:pointer;transition:background .2s,transform .2s}
@@ -50,8 +45,9 @@ h1 span{color:var(--blue)}
 .hero-points{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 20px;margin-top:27px}
 .point{display:flex;align-items:center;gap:10px;font-size:13px}
 .point-icon{font-size:27px;color:var(--blue)}
-.hero-visual{position:relative;min-height:300px;display:flex;align-items:center;justify-content:center}
-.device-scene{width:100%;min-height:300px;border-radius:22px;background:linear-gradient(145deg,#173b60,#071525);padding:22px;box-shadow:0 20px 45px #10243b2b;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-visual{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center}
+.device-scene{width:100%;min-height:315px;border-radius:22px;background:linear-gradient(145deg,#173b60,#071525);padding:22px;box-shadow:0 20px 45px #10243b2b;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.device-scene:before{content:"";position:absolute;width:350px;height:350px;border-radius:50%;background:#0789f923;right:-100px;top:-120px}
 .screen{position:relative;z-index:1;width:100%;padding:26px 12px;text-align:center;color:white}
 .big-logo{width:150px;height:100px;margin:0 auto 12px}
 .big-logo svg{width:100%;height:100%}
@@ -78,7 +74,7 @@ section{padding:55px 0}
 .checks li{position:relative;padding:4px 0 4px 23px;font-size:14px}
 .checks li:before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:900}
 .card .btn{font-size:13px}
-.pricing,.portfolio{background:#e8f1fb}
+.pricing{background:#e8f1fb}
 .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .price-card{background:white;border:1px solid var(--border);border-radius:14px;padding:23px 19px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .price-card.featured{border:2px solid var(--blue)}
@@ -98,22 +94,29 @@ section{padding:55px 0}
 .about-copy p{color:var(--muted)}
 .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
 .pill{background:#e9f4ff;color:#135c9c;padding:8px 12px;border-radius:25px;font-size:12px}
+.portfolio{background:#e8f1fb}
 .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
 .project{background:white;border-radius:13px;overflow:hidden;border:1px solid var(--border)}
 .project-art{height:155px;display:grid;place-items:center;text-align:center;color:white;font-size:22px;font-weight:800;padding:15px}
+.project-art.artisan{background:linear-gradient(135deg,#7e9e75,#315b49)}
+.project-art.commerce{background:linear-gradient(135deg,#cf955b,#754b30)}
+.project-art.association{background:linear-gradient(135deg,#4b9f91,#205f73)}
 .project-art span{display:block;font-size:12px;font-weight:400;margin-top:8px}
-.artisan{background:linear-gradient(135deg,#7e9e75,#315b49)}
-.commerce{background:linear-gradient(135deg,#cf955b,#754b30)}
-.association{background:linear-gradient(135deg,#4b9f91,#205f73)}
 .project-copy{padding:14px}
 .project-copy h3{font-size:15px;margin:0 0 5px}
 .project-copy p{font-size:12px;color:var(--muted);margin:0}
 .disclaimer{text-align:center;font-size:12px;color:var(--muted);margin-top:15px}
-.reviews{background:white}
-.review-empty{max-width:760px;margin:auto;background:#f0f7ff;border:1px solid #cfe5fb;border-radius:14px;padding:25px;text-align:center}
+.reviews{background:#fff}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.review-card{background:#f7faff;border:1px solid var(--border);border-radius:13px;padding:22px}
+.review-stars{color:#f2a900;letter-spacing:3px;font-size:20px;margin-bottom:8px}
+.review-card h3{font-size:16px;margin:0 0 8px;color:var(--navy)}
+.review-card p{font-size:14px;color:var(--muted);margin:0}
+.review-empty{max-width:760px;margin:0 auto;background:#f0f7ff;border:1px solid #cfe5fb;border-radius:14px;padding:25px;text-align:center}
 .review-empty h3{margin:0 0 8px;color:var(--navy)}
 .review-empty p{color:var(--muted);margin:0 0 16px}
 .review-disclaimer{font-size:12px;color:var(--muted);text-align:center;margin-top:14px}
+@media(max-width:700px){.review-grid{grid-template-columns:1fr}}
 .faq-list{max-width:850px;margin:auto}
 details{background:white;border:1px solid var(--border);border-radius:10px;padding:16px 19px;margin-bottom:10px}
 summary{font-weight:700;cursor:pointer}
@@ -132,45 +135,47 @@ label{font-size:12px;font-weight:700}
 input,textarea,select{width:100%;padding:12px;border:1px solid #d6e0eb;border-radius:7px;font:inherit;font-size:13px;background:white;color:var(--text)}
 textarea{min-height:100px;resize:vertical}
 .form-note{font-size:11px;color:var(--muted);grid-column:1/-1;margin:0}
+button:disabled{opacity:.65;cursor:wait}
 footer{background:#091626;color:#cad7e6;text-align:center;padding:24px 0;font-size:12px}
 footer a{color:var(--cyan)}
 @media(max-width:1050px){
-  .nav{flex-wrap:wrap;padding:12px 0}
-  nav{order:3;width:100%;justify-content:center}
-  .brand-copy{font-size:22px}
-  .pricing-grid{grid-template-columns:repeat(2,1fr)}
-  .benefits{grid-template-columns:repeat(2,1fr)}
+ .nav{flex-wrap:wrap;padding:12px 0}
+ nav{order:3;width:100%;justify-content:center}
+ .brand-copy{font-size:24px}
+ .pricing-grid{grid-template-columns:repeat(2,1fr)}
+ .benefits{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:700px){
-  .container{width:92%}
-  .brand-svg{width:65px;height:48px}
-  .brand-copy{font-size:17px}
-  .tagline{font-size:10px}
-  .nav>.btn{padding:10px 12px;font-size:12px}
-  nav{gap:12px}
-  nav a{font-size:12px}
-  .hero-grid{grid-template-columns:1fr;padding:38px 0 25px;gap:20px}
-  h1{font-size:43px}
-  .hero-copy>p{font-size:15px}
-  .hero-visual{min-height:230px}
-  .device-scene{min-height:230px;padding:15px}
-  .big-logo{width:100px;height:75px}
-  .screen h2{font-size:23px}
-  .hero-points{gap:10px}
-  .point{font-size:11px}
-  .benefits{grid-template-columns:1fr 1fr}
-  .benefit{padding:10px;font-size:11px}
-  section{padding:43px 0}
-  .service-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-  .pricing-grid{grid-template-columns:1fr}
-  .price-card h3,.price-desc{min-height:0}
-  .portfolio-grid{grid-template-columns:1fr}
-  .project-art{height:130px}
-  .about-logo{min-height:180px}
-  .about-logo svg{width:160px}
-  form{grid-template-columns:1fr}
-  .field.full,.form-note{grid-column:auto}
-  .contact h2{font-size:30px}
+ .container{width:92%}
+ .brand-svg{width:80px;height:48px}
+ .brand-copy{font-size:19px}
+ .tagline{font-size:11px}
+ .nav>.btn{padding:10px 12px;font-size:12px}
+ nav{gap:12px}
+ nav a{font-size:12px}
+ .hero-grid{grid-template-columns:1fr;padding:38px 0 25px;gap:20px}
+ h1{font-size:43px}
+ .hero-copy>p{font-size:15px}
+ .hero-visual{min-height:230px}
+ .device-scene{min-height:230px;padding:15px}
+ .big-logo{width:100px;height:75px}
+ .screen h2{font-size:23px}
+ .hero-points{gap:10px}
+ .point{font-size:11px}
+ .benefits{grid-template-columns:1fr 1fr}
+ .benefit{padding:10px;font-size:11px}
+ section{padding:43px 0}
+ .service-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .pricing-grid{grid-template-columns:1fr}
+ .price-card h3{min-height:0}
+ .price-desc{min-height:0}
+ .portfolio-grid{grid-template-columns:1fr}
+ .project-art{height:130px}
+ .about-logo{min-height:180px}
+ .about-logo svg{width:160px}
+ form{grid-template-columns:1fr}
+ .field.full,.form-note{grid-column:auto}
+ .contact h2{font-size:30px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
@@ -208,14 +213,7 @@ footer a{color:var(--cyan)}
 </span>
 </a>
 <nav aria-label="Navigation principale">
-<a href="#accueil">Accueil</a>
-<a href="#services">Services</a>
-<a href="#tarifs">Tarifs</a>
-<a href="#apropos">À propos</a>
-<a href="#realisations">Réalisations</a>
-<a href="#avis">Avis</a>
-<a href="#faq">FAQ</a>
-<a href="#contact">Contact</a>
+<a href="#accueil">Accueil</a><a href="#services">Services</a><a href="#tarifs">Tarifs</a><a href="#apropos">À propos</a><a href="#realisations">Réalisations</a><a href="#avis">Avis</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
 </nav>
 <a class="btn" href="#contact">✉ Me contacter</a>
 </div>
@@ -228,10 +226,7 @@ footer a{color:var(--cyan)}
 <span class="eyebrow">Création web et assistance numérique</span>
 <h1>Le numérique,<br><span>simplement.</span></h1>
 <p>Création de sites internet et assistance informatique pour les professionnels, les particuliers et les associations. Des solutions claires, accessibles et adaptées à vos besoins.</p>
-<div class="actions">
-<a class="btn" href="#services">▣ Découvrir mes services</a>
-<a class="btn btn-outline" href="#contact">✉ Demander un devis</a>
-</div>
+<div class="actions"><a class="btn" href="#services">▣ Découvrir mes services</a><a class="btn btn-outline" href="#contact">✉ Demander un devis</a></div>
 <div class="hero-points">
 <div class="point"><span class="point-icon">♧</span><span>Accompagnement<br>personnalisé</span></div>
 <div class="point"><span class="point-icon">⚙</span><span>Solutions simples<br>et efficaces</span></div>
@@ -239,16 +234,11 @@ footer a{color:var(--cyan)}
 <div class="point"><span class="point-icon">⌖</span><span>À distance ou sur place<br>selon disponibilité</span></div>
 </div>
 </div>
-<div class="hero-visual">
-<div class="device-scene">
-<div class="screen">
+<div class="hero-visual"><div class="device-scene"><div class="screen">
 <div class="big-logo"><svg viewBox="0 0 180 115" role="img" aria-label="Logo AdriTech AT"><use href="#adritech-logo"/></svg></div>
-<h2>AdriTech <span>Services</span></h2>
-<p>Le numérique, simplement.</p>
+<h2>AdriTech <span>Services</span></h2><p>Le numérique, simplement.</p>
 <div class="screen-tags"><span>Création web</span><span>Assistance</span><span>Accompagnement</span></div>
-</div>
-</div>
-</div>
+</div></div></div>
 </div>
 </section>
 
@@ -261,11 +251,7 @@ footer a{color:var(--cyan)}
 
 <section id="services">
 <div class="container">
-<div class="section-title">
-<span class="eyebrow">Mes services</span>
-<h2>Comment puis-je vous aider ?</h2>
-<p>Des prestations numériques accessibles aux petites entreprises et aux particuliers.</p>
-</div>
+<div class="section-title"><span class="eyebrow">Mes services</span><h2>Comment puis-je vous aider ?</h2><p>Des prestations numériques accessibles aux petites entreprises et aux particuliers.</p></div>
 <div class="service-grid">
 <article class="card">
 <div class="card-head"><div class="round-icon">▣</div><div><h3>Création de sites internet</h3><p>Une présence en ligne adaptée à votre activité.</p></div></div>
@@ -287,36 +273,28 @@ footer a{color:var(--cyan)}
 
 <section class="pricing" id="tarifs">
 <div class="container">
-<div class="section-title">
-<span class="eyebrow">Offres de lancement</span>
-<h2>Mes tarifs</h2>
-<p>Des prix indicatifs et des prestations définies à l'avance. Un devis précise le contenu, les délais et les frais éventuels.</p>
-</div>
+<div class="section-title"><span class="eyebrow">Offres de lancement</span><h2>Mes tarifs</h2><p>Des prix indicatifs et des prestations définies à l'avance. Un devis précise le contenu, les délais et les frais éventuels.</p></div>
 <div class="pricing-grid">
 <article class="price-card">
-<span class="price-label">Offre essentielle</span><h3>Site vitrine Essentiel</h3><div class="price">450 €</div>
-<p class="price-desc">Pour présenter votre activité sur Internet.</p>
+<span class="price-label">Offre essentielle</span><h3>Site vitrine Essentiel</h3><div class="price">450 €</div><p class="price-desc">Pour présenter votre activité sur Internet.</p>
 <ul class="checks"><li>Jusqu'à 3 pages</li><li>Design moderne et responsive</li><li>Présentation des services</li><li>Liens de contact</li><li>Mise en ligne prévue au devis</li></ul>
 <p class="limit">Non inclus : boutique en ligne, réservation complexe, espace membre, rédaction complète, hébergement et nom de domaine. Les modifications supplémentaires sont chiffrées à part.</p>
 <a class="btn" href="mailto:adritech.services90@gmail.com?subject=Devis%20Site%20vitrine%20Essentiel">Choisir cette offre</a>
 </article>
 <article class="price-card featured">
-<span class="price-label">Offre professionnelle</span><h3>Site professionnel</h3><div class="price">750 €</div>
-<p class="price-desc">Pour détailler vos services et votre entreprise.</p>
+<span class="price-label">Offre professionnelle</span><h3>Site professionnel</h3><div class="price">750 €</div><p class="price-desc">Pour détailler vos services et votre entreprise.</p>
 <ul class="checks"><li>Jusqu'à 5 pages</li><li>Design personnalisé</li><li>Adaptation mobile</li><li>Formulaire simple selon la solution retenue</li><li>Référencement de base des pages</li><li>Aide à la mise en ligne</li></ul>
 <p class="limit">Non inclus : boutique en ligne, fonctions complexes, licences payantes, hébergement et domaine. Les textes et visuels sont fournis par le client sauf accord écrit contraire.</p>
 <a class="btn" href="mailto:adritech.services90@gmail.com?subject=Devis%20Site%20professionnel">Choisir cette offre</a>
 </article>
 <article class="price-card">
-<span class="price-label">Service facultatif</span><h3>Maintenance de site</h3><div class="price">40 € <small>/ mois</small></div>
-<p class="price-desc">Pour l'entretien périodique d'un site existant.</p>
+<span class="price-label">Service facultatif</span><h3>Maintenance de site</h3><div class="price">40 € <small>/ mois</small></div><p class="price-desc">Pour l'entretien périodique d'un site existant.</p>
 <ul class="checks"><li>Vérifications convenues</li><li>Mises à jour si applicables</li><li>Vérification des sauvegardes prévues</li><li>Petites modifications dans une limite convenue</li></ul>
 <p class="limit">Le contrat précisera la fréquence, le temps inclus et les outils concernés. Hébergement, licences, réparations complexes et interventions supplémentaires sont facturés séparément si nécessaire.</p>
 <a class="btn btn-outline" href="mailto:adritech.services90@gmail.com?subject=Renseignements%20maintenance">En savoir plus</a>
 </article>
 <article class="price-card">
-<span class="price-label">À la demande</span><h3>Assistance informatique</h3><div class="price">30 € <small>/ heure</small></div>
-<p class="price-desc">Pour être accompagné dans l'utilisation de vos outils.</p>
+<span class="price-label">À la demande</span><h3>Assistance informatique</h3><div class="price">30 € <small>/ heure</small></div><p class="price-desc">Pour être accompagné dans l'utilisation de vos outils.</p>
 <ul class="checks"><li>Aide informatique courante</li><li>Configuration d'appareils</li><li>E-mails et Internet</li><li>Logiciels courants</li><li>Conseils personnalisés</li></ul>
 <p class="limit">Durée minimale, déplacement et modalités à confirmer au devis. Matériel, licences, récupération complexe de données et réparations spécialisées non inclus.</p>
 <a class="btn btn-outline" href="mailto:adritech.services90@gmail.com?subject=Demande%20assistance%20informatique">Prendre contact</a>
@@ -384,19 +362,30 @@ footer a{color:var(--cyan)}
 <p>Adresse e-mail professionnelle :</p>
 <a class="email-box" href="mailto:adritech.services90@gmail.com">✉ adritech.services90@gmail.com</a>
 </div>
+
 <div class="contact-panel">
 <h3>Demander des renseignements</h3>
-<form action="https://formsubmit.co/adritech.services90@gmail.com" method="POST">
+
+<form id="contact-form"
+      action="https://formsubmit.co/ajax/adritech.services90@gmail.com"
+      method="POST">
+
 <input type="hidden" name="_subject" value="Nouvelle demande de devis - AdriTech Services">
 <input type="hidden" name="_template" value="table">
-<div class="field full" aria-hidden="true" style="display:none">
-<label for="website">Ne pas remplir ce champ</label>
-<input id="website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+<div class="field full">
+<label for="nom">Nom et prénom *</label>
+<input id="nom" type="text" name="Nom" required maxlength="100" autocomplete="name" placeholder="Ton nom et prénom">
 </div>
-<div class="field full"><h3>Demander un devis</h3><p>Décris ton projet : je pourrai étudier ta demande.</p></div>
-<div class="field"><label for="nom">Nom et prénom *</label><input id="nom" type="text" name="Nom" required maxlength="100" autocomplete="name" placeholder="Ton nom et prénom"></div>
-<div class="field"><label for="email">Adresse e-mail *</label><input id="email" type="email" name="email" required maxlength="150" autocomplete="email" placeholder="toi@exemple.fr"></div>
-<div class="field full"><label for="prestation">Prestation souhaitée *</label>
+
+<div class="field full">
+<label for="email">Adresse e-mail *</label>
+<input id="email" type="email" name="email" required maxlength="150" autocomplete="email" placeholder="toi@exemple.fr">
+</div>
+
+<div class="field full">
+<label for="prestation">Prestation souhaitée *</label>
 <select id="prestation" name="Prestation" required>
 <option value="">Choisir une prestation</option>
 <option>Site vitrine Essentiel - 450 €</option>
@@ -404,16 +393,44 @@ footer a{color:var(--cyan)}
 <option>Maintenance - 40 €/mois</option>
 <option>Assistance informatique - 30 €/heure</option>
 <option>Autre demande</option>
-</select></div>
-<div class="field"><label for="budget">Budget envisagé</label><select id="budget" name="Budget">
-<option value="">Choisir une fourchette</option><option>Moins de 100 €</option><option>100 à 300 €</option><option>300 à 500 €</option><option>500 à 800 €</option><option>Plus de 800 €</option><option>À définir ensemble</option>
-</select></div>
-<div class="field"><label for="delai">Délai souhaité</label><select id="delai" name="Délai">
-<option value="">Choisir un délai</option><option>Dès que possible</option><option>Dans le mois</option><option>Dans les 2 à 3 mois</option><option>Pas de date précise</option>
-</select></div>
-<div class="field full"><label for="message">Décris ton besoin *</label><textarea id="message" name="Message" required minlength="10" maxlength="4000" rows="6" placeholder="Quel est ton projet ? De quelles fonctionnalités as-tu besoin ?"></textarea></div>
-<p class="form-note">Les informations saisies servent à traiter ta demande. Évite d'inclure des mots de passe ou des données sensibles.</p>
-<div class="field full"><button class="btn" type="submit">Envoyer ma demande de devis</button></div>
+</select>
+</div>
+
+<div class="field full">
+<label for="budget">Budget envisagé</label>
+<select id="budget" name="Budget">
+<option value="">Choisir une fourchette</option>
+<option>Moins de 100 €</option>
+<option>100 à 300 €</option>
+<option>300 à 500 €</option>
+<option>500 à 800 €</option>
+<option>Plus de 800 €</option>
+<option>À définir ensemble</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="delai">Délai souhaité</label>
+<select id="delai" name="Délai">
+<option value="">Choisir un délai</option>
+<option>Dès que possible</option>
+<option>Dans le mois</option>
+<option>Dans les 2 à 3 mois</option>
+<option>Pas de date précise</option>
+</select>
+</div>
+
+<div class="field full">
+<label for="message">Décris ton besoin *</label>
+<textarea id="message" name="Message" required minlength="10" maxlength="4000" rows="6" placeholder="Quel est ton projet ? De quelles fonctionnalités as-tu besoin ?"></textarea>
+</div>
+
+<p class="form-note full">Les informations saisies servent à traiter ta demande. Évite d'inclure des mots de passe ou des données sensibles.</p>
+
+<div class="field full">
+<button id="submit-button" class="btn" type="submit">Envoyer ma demande de devis</button>
+</div>
+<p id="form-status" class="form-note full" role="status" aria-live="polite"></p>
 </form>
 </div>
 </div>
@@ -429,8 +446,46 @@ footer a{color:var(--cyan)}
 <p>Projet en préparation — les informations légales devront être complétées avant le lancement commercial.</p>
 </div>
 </footer>
+
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+
+const form = document.getElementById("contact-form");
+const button = document.getElementById("submit-button");
+const statusMessage = document.getElementById("form-status");
+
+form.addEventListener("submit", async function (event) {
+  event.preventDefault();
+  statusMessage.textContent = "";
+  button.disabled = true;
+  button.textContent = "Envoi en cours…";
+
+  try {
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      statusMessage.textContent =
+        "Merci ! Votre demande a bien été envoyée. Je vous répondrai dès que possible.";
+      statusMessage.style.color = "#16713b";
+      form.reset();
+    } else {
+      throw new Error("Envoi non confirmé");
+    }
+  } catch (error) {
+    statusMessage.textContent =
+      "L'envoi n'a pas pu être confirmé. Réessayez plus tard ou écrivez à adritech.services90@gmail.com.";
+    statusMessage.style.color = "#b42318";
+  } finally {
+    button.disabled = false;
+    button.textContent = "Envoyer ma demande de devis";
+  }
+});
 </script>
 </body>
 </html>
